@@ -1,16 +1,12 @@
 package me.trashman.queuenotify.queuenotify;
 
-import com.squareup.okhttp.*;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
-import java.util.List;
 
 import static org.apache.commons.lang3.CharEncoding.UTF_8;
 

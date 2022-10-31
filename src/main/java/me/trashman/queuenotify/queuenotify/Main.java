@@ -5,18 +5,24 @@ import net.minecraftforge.client.event.ClientChatReceivedEvent;
 
 
 public class Main {
-    public static String server = Minecraft.getMinecraft().getCurrentServerData().serverIP;
+    public static Minecraft mc = Minecraft.getMinecraft();
+    public static String server = mc.getCurrentServerData().serverIP;
+    public static boolean sent = false;
 
-    public static void onLogin() {
-        if (server == "2b2t.org" || server == "test.2b2t.org" ){
-            Whandler.sendMessage("joined 2b2t");
-
-        }
+    public static void onTick() {
+        Whandler.sendMessage("joined:" + server);
+        sent = true;
     }
 
-    public static void onChatmessage(ClientChatReceivedEvent event){
+    public static void onLogout(){
+        sent = false;
+    }
+
+    public static void onChatMessage(ClientChatReceivedEvent event){
         String message = event.getMessage().getUnformattedText();
-        Whandler.sendMessage(message);
+        if (message != "You can purchase priority queue status to join the server faster, visit shop.2b2t.org"){
+            Whandler.sendMessage(message);
+        }
 
     }
 }

@@ -4,12 +4,12 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ClientChatReceivedEvent;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.fml.common.event.FMLEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.common.network.FMLNetworkEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -30,19 +30,25 @@ public class QueueNotify {
     @Mod.Instance(MOD_ID)
     public static QueueNotify INSTANCE;
 
+
+
     @SubscribeEvent
-    public void onClientConnect(FMLNetworkEvent.ClientConnectedToServerEvent event) {
-        Main.onLogin();
+    public void onTick(TickEvent.ClientTickEvent event) {
+        Main.onTick();
+    }
+
+    @SubscribeEvent
+    public void onClientDisconnect(FMLNetworkEvent.ClientDisconnectionFromServerEvent event) {
+        Main.onLogout();
     }
 
     @SubscribeEvent
     public void onRecieveChatMessage(ClientChatReceivedEvent event){
-        Main.onChatmessage(event);
+        Main.onChatMessage(event);
     }
 
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event) {
-        Whandler.sendMessage("test");
     }
 
     /**

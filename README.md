@@ -1,2 +1,4 @@
 # QueueNotify
-shitty forge mod that sends your 2b queue position to a discord webhook server
+shitty forge mod that sends your 2b2t queue position to a discord webhook server
+## how to use
+setup the normal forge stuff then replace the webhook in Whandler.java with your own webhook

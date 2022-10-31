@@ -1,19 +1,16 @@
 [
-  {
-    "modid": "QueueNotify",
-    "name": "QueueNotify",
-    "description": "while queuing sends your queue position to a discord webhook",
-    "version": "${version}",
-    "mcversion": "${mcversion}",
-    "url": "Trash man#9707",
-    "updateUrl": "",
-    "authorList": [
-      "yeetusthefeetus",
-      "trashman"
-    ],
-    "credits": "",
-    "logoFile": "",
-    "screenshots": [],
-    "dependencies": []
-  }
+    {
+        "modid": "QueueNotify",
+        "name": "QueueNotify",
+        "description": "while queuing sends your queue position to a discord webhook",
+        "version": "0.0.1",
+        "mcversion": "${mcversion}",
+        "url": "Trash man#9707",
+        "updateUrl": "",
+        "authorList": ["yeetusthefeetus", "trashman"],
+        "credits": "",
+        "logoFile": "",
+        "screenshots": [],
+        "dependencies": []
+    }
 ]
