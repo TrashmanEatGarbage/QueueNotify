@@ -10,16 +10,16 @@ public class Main {
     public static boolean sent = false;
 
     public static void onTick() {
-        Whandler.sendMessage("joined:" + server);
-        sent = true;
+        try{
+            Whandler.sendMessage("ticked");
+        }catch (Exception e){
+            Whandler.sendMessage(e + "fucked");
+        }
     }
 
-    public static void onLogout(){
-        sent = false;
-    }
 
-    public static void onChatMessage(ClientChatReceivedEvent event){
-        String message = event.getMessage().getUnformattedText();
+
+    public static void onChatMessage(String message){
         if (message != "You can purchase priority queue status to join the server faster, visit shop.2b2t.org"){
             Whandler.sendMessage(message);
         }
